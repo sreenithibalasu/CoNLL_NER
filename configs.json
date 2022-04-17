@@ -1,0 +1,6 @@
+{
+  "data_path": "./data",
+  "results_path": "./results",
+  "viz_path": "./viz",
+  "classes" : {"PER": 1, "LOC": 2, "MISC": 3, "ORG": 4, "O":0}
+}
