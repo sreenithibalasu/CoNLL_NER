@@ -7,7 +7,7 @@
 - I've chosen the CoNLL 2003 [1] dataset. The task for this "competition" was to do language independent NER. The entire dataset consisted of English and German text. For the purpose of this project, I've chosen to include only the english language text.
 
 | English Text | Tokens | LOC | PER | ORG | MISC |
-|---|---|---|---|---|---|---|
+|--------------|--------|-----|-----|-----|------|
 |  Training | 203,621 | 7140 | 6600 | 6321 | 3438 |
 |  Validation | 51,362 | 1837 | 1842 | 1341 | 922 |
 |  Testing | 46,435 | 1668 | 1617 | 1661 | 702 |
