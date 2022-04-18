@@ -8,6 +8,23 @@
 
 | English Text | Tokens | LOC | PER | ORG | MISC |
 |--------------|--------|-----|-----|-----|------|
-|  Training | 203,621 | 7140 | 6600 | 6321 | 3438 |
-|  Validation | 51,362 | 1837 | 1842 | 1341 | 922 |
-|  Testing | 46,435 | 1668 | 1617 | 1661 | 702 |
+|  Training | 203,621 | 8297 | 11128 | 10025 | 4593 |
+|  Validation | 51,362 | 2094 | 3149 | 2092 | 1268 |
+|  Testing | 46,435 | 1925 | 2773 | 2496 | 918 |
+
+- This dataset contains tokenized text of **5 categories**:
+  - LOC: location
+  - PER: person name
+  - ORG: organization name
+  - MISC: miscellaneous 
+  - O: objects
+
+- The dataset was split into train, validation and test sets, with 200k + tokens in the training set and 46k tokens in the test set
+
+<img width="446" alt="Screen Shot 2022-04-18 at 9 15 16 AM" src="https://user-images.githubusercontent.com/40226554/163820892-fb69c3a9-5608-49bb-9878-758e498ab998.png">
+
+<img width="460" alt="Screen Shot 2022-04-18 at 9 15 32 AM" src="https://user-images.githubusercontent.com/40226554/163820948-a53573d0-b145-409a-9b6e-cb3b9f1743a8.png">
+
+<img width="476" alt="Screen Shot 2022-04-18 at 9 15 44 AM" src="https://user-images.githubusercontent.com/40226554/163820983-09bb899e-7e97-4d81-b92e-bb1312d5b0d9.png">
+
+## Preprocessing
