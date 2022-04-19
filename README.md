@@ -46,3 +46,26 @@
   - Remove unwanted spaces with `lstrip` and `rstrip`
   - Remove white space characters `['\n', '\t', '\r']`
 - Store processed text in new `csv` files
+
+### Step 3: Vectorization
+- **Corresponding File**: `training.py` -> `format_word2vec` and `convert_word2vec` function
+- What is Word2Vec?
+  - `Word2Vec` is an approach used to learn word embeddings for large text datasets
+  - `Word embeddings` are nothing but numerical representation of text in the form of vectors
+  - Each word is mapped to a corresponding vector which maps characteristics of a word with respect to a document
+  - The vector representation helps capture similarities and dissimilarities between words in the document
+  - For this project, I built a custom `Word2Vec` model using `gensim`.
+
+- Word2Vec has two approaches
+  - Continuous Bag of Words (CBOW)
+  - Continuous Skip-Gram
+  - For this project, I've cosen the Skip-Gram model over the CBOW model as the skip-gram model had better quality of prediction. Although, the computational complexity is higher.
+
+- With the data I have- a `csv` file of tokens, my first task was to make a corpus of sentences. I grouped words as sentences - each sentence ending with a period `.`
+- The corpus is now a list of lists - a list of tokenized sentences
+- The corpus contained information from all 3 datasets
+- The `Word2Vec` model was then trained on this corpus and the original tokens were then transformed and representec as vectors
+
+### Step 4: Model Training
+- **Corresponding File**: `training.py` --> `train_model` function
+- 
