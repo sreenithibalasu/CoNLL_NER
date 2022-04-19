@@ -68,4 +68,23 @@
 
 ### Step 4: Model Training
 - **Corresponding File**: `training.py` --> `train_model` function
-- 
+- The models I've trained include `Random Forest`, `Naive Bayes` and a `Gradient Boosting Machine`
+- The models were trained on the vector representation of tokens and the ground truth labels
+
+### Results
+
+- Model training on 5 classes: `{"PER": 1, "LOC": 2, "MISC": 3, "ORG": 4, "O":0}`
+
+| Model | Training Accuracy | Test Accuracy | 
+|-------|-------------------|---------------|
+| Random Forest | 98.32% | 93.08% |
+| Naive Bayes | 62.33% | 62.78% |
+| Gradient Boosting | 87.26% | 86.22% |
+
+- Model training on 4 classes: `{"PER": 1, "LOC": 2, "MISC": 3, "ORG": 4}`
+
+| Model | Training Accuracy | Test Accuracy | 
+|-------|-------------------|---------------|
+| Random Forest |  |  |
+| Naive Bayes |  |  |
+| Gradient Boosting |  |  |
