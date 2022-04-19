@@ -28,3 +28,10 @@
 <img width="476" alt="Screen Shot 2022-04-18 at 9 15 44 AM" src="https://user-images.githubusercontent.com/40226554/163820983-09bb899e-7e97-4d81-b92e-bb1312d5b0d9.png">
 
 ## Preprocessing
+
+### Step 1: Convert Text File to CSV Files
+- **Corresponding File**: `txt_to_csv.py`
+- The original dataset files were of `.txt` format. These text files started with a `-DOCSTART -X-X-X` and had multiple blank lines in between each text sample. 
+- As a preprocessing step, I converted the `txt` files to `csv` files, by extracting lines with text which weren't `-DOCSTART`, had `length > 0` and didn't start with a newline character `\n`.
+- I put these entries in a `list` first - separately as `X` and `y`- `X` has the tokens and `y` has the ground-truth tags.
+- I zipped the two lists into one dataframe for training, validation and test sets. 
