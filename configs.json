@@ -2,5 +2,7 @@
   "data_path": "./data",
   "results_path": "./results",
   "viz_path": "./viz",
-  "classes" : {"PER": 1, "LOC": 2, "MISC": 3, "ORG": 4, "O":0}
+  "classes" : {"PER": 1, "LOC": 2, "MISC": 3, "ORG": 4, "O":0},
+  "classes_reversed": {"1":"PER", "2":"LOC", "3":"MISC", "4":"ORG", "0":"O"},
+  "custom_inputs": ["My name is Ashley and I work at Microsoft in America."]
 }
