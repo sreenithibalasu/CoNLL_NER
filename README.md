@@ -3,6 +3,8 @@
 - **Named Entity Recognition (NER)** aims to categorize unstructured text into pre-defined categories such as person name, organization name, location, phone number, email etc. The idea of doing NER came to me because I got a taste of it during an internship I did in India. 
 - NER can be an important task because it can help identify key elements in unstructured data such as text. For example: if we had an image detection and recognition system that extracts text from business cards, categorizing that text automatically into pre-defined categories such as name, organization, email address etc. can help us build structured datasets to store that useful information in.
 
+![image](https://user-images.githubusercontent.com/40226554/164024847-f6fe55ea-1af1-4080-9137-ea5f91631988.png)
+
 ## Dataset
 - I've chosen the CoNLL 2003 [1] dataset. The task for this "competition" was to do language independent NER. The entire dataset consisted of English and German text. For the purpose of this project, I've chosen to include only the english language text.
 
@@ -88,3 +90,11 @@
 | Random Forest |  |  |
 | Naive Bayes |  |  |
 | Gradient Boosting |  |  |
+
+## References
+
+[1] Tjong Kim Sang, E. F., &amp; De Meulder, F. (2003). Introduction to the CONLL-2003 shared task: Language-Independent Named Entity Recognition. Proceedings of the Seventh Conference on Natural Language Learning at HLT-NAACL 2003  -. https://doi.org/10.3115/1119176.1119195 
+
+[2] Rawlence, L. (n.d.). AIIMI labs on... named-entity recognition. Aiimi. Retrieved April 19, 2022, from https://www.aiimi.com/insights/aiimi-labs-on-named-entity-recognition 
+
+[3] Mikolov, T., Chen, K., Corrado, G., &amp; Dean, J. (2013, September 7). Efficient estimation of word representations in vector space. arXiv.org. Retrieved April 19, 2022, from https://arxiv.org/abs/1301.3781 
