@@ -91,17 +91,22 @@
 - The Gradient Boosting model performs well and we can see there is no overfitting. However, it doesn't capture patterns as well as the Random Forest model.
 
 
-- Model training on 4 classes: `{"PER": 1, "LOC": 2, "MISC": 3, "ORG": 4}`
-
-| Model | Training Accuracy | Test Accuracy | 
-|-------|-------------------|---------------|
-| Random Forest |  |  |
-| Naive Bayes |  |  |
-| Gradient Boosting |  |  |
-
 ### Sample Outputs
 
-
+| TOKEN | TAG |
+|-------|-----|
+| My | O |
+| name | O |
+| is | O |
+| Ashley | PER |
+| and | O |
+| I | O | 
+| work | O | 
+| at | O |
+| Microsoft | ORG | 
+| in |  O  |
+| America | LOC | 
+| . | O | 
 
 ### Future Scope
 
