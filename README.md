@@ -6,6 +6,9 @@
 
 ![image](https://user-images.githubusercontent.com/40226554/164024847-f6fe55ea-1af1-4080-9137-ea5f91631988.png)
 
+- **Usage Notes** can be found [here](https://github.com/sreenithibalasu/CoNLL_NER/blob/main/results/README.md)
+
+
 ## Dataset
 - I've chosen the CoNLL 2003 [1] dataset. The task for this "competition" was to do language independent NER. The entire dataset consisted of English and German text. For the purpose of this project, I've chosen to include only the english language text.
 
@@ -92,24 +95,29 @@
 
 
 ### Sample Outputs
+- Sentence: My name is Ashley and I work at Microsoft in America
+- Tags for the sentence above was generated using the Random Forest Model
 
 | TOKEN | TAG |
 |-------|-----|
 | My | O |
 | name | O |
 | is | O |
-| Ashley | PER |
+| **Ashley** | **PER** |
 | and | O |
 | I | O | 
 | work | O | 
 | at | O |
-| Microsoft | ORG | 
+| **Microsoft** | **ORG** | 
 | in |  O  |
-| America | LOC | 
+| **America** | **LOC** | 
 | . | O | 
 
 ### Future Scope
 
+- Make a web application where users will be able to input a sentence and tagging will be done automatically
+- Include more samples and categories
+- Train neural networks for better performance
 
 ## References
 
