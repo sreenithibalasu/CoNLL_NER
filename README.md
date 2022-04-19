@@ -6,7 +6,7 @@
 
 ![image](https://user-images.githubusercontent.com/40226554/164024847-f6fe55ea-1af1-4080-9137-ea5f91631988.png)
 
-- **Usage Notes** can be found [here](https://github.com/sreenithibalasu/CoNLL_NER/blob/main/results/README.md)
+- **Usage Notes** can be found [here](https://github.com/sreenithibalasu/CoNLL_NER/blob/main/data/README.md)
 
 
 ## Dataset
