@@ -73,6 +73,8 @@
 - **Corresponding File**: `training.py` --> `train_model` function
 - The models I've trained include `Random Forest`, `Naive Bayes` and a `Gradient Boosting Machine`
 - The models were trained on the vector representation of tokens and the ground truth labels
+- I've chosen to work with two ensemble models - Random Forest and Gradient Boosting Machine
+- A classification report was constructed for each of the models
 
 ### Results
 
@@ -84,6 +86,11 @@
 | Naive Bayes | 62.33% | 62.78% |
 | Gradient Boosting | 87.26% | 86.22% |
 
+- From the table above, we can see that the Random Forest classifer had maximum accuracy of 93% on the test dataset compared to the Naive Bayes and Gradient Boosting models.
+- We can observe there is some overfitting in the Naive Bayes model due to the test accuracy being slightly higher than the training accuracy
+- The Gradient Boosting model performs well and we can see there is no overfitting. However, it doesn't capture patterns as well as the Random Forest model.
+
+
 - Model training on 4 classes: `{"PER": 1, "LOC": 2, "MISC": 3, "ORG": 4}`
 
 | Model | Training Accuracy | Test Accuracy | 
@@ -91,6 +98,13 @@
 | Random Forest |  |  |
 | Naive Bayes |  |  |
 | Gradient Boosting |  |  |
+
+### Sample Outputs
+
+
+
+### Future Scope
+
 
 ## References
 
