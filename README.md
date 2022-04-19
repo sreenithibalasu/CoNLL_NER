@@ -33,5 +33,16 @@
 - **Corresponding File**: `txt_to_csv.py`
 - The original dataset files were of `.txt` format. These text files started with a `-DOCSTART -X-X-X` and had multiple blank lines in between each text sample. 
 - As a preprocessing step, I converted the `txt` files to `csv` files, by extracting lines with text which weren't `-DOCSTART`, had `length > 0` and didn't start with a newline character `\n`.
-- I put these entries in a `list` first - separately as `X` and `y`- `X` has the tokens and `y` has the ground-truth tags.
+- I put these entries in a `list` first - separately as `X` and `y` -> `X` has the tokens and `y` has the ground-truth tags.
 - I zipped the two lists into one dataframe for training, validation and test sets. 
+
+### Step 2: Text Preprocessing
+- **Corresponding File**: `preprocessing.py`
+- Drop any missing values from the `csv` files
+- Convert string categories to numerical values
+  - Class Encoding: `{"PER": 1, "LOC": 2, "MISC": 3, "ORG": 4, "O":0}`
+  - The original tags included IOB tags, which were removed
+- Text Preprocessing
+  - Remove unwanted spaces with `lstrip` and `rstrip`
+  - Remove white space characters `['\n', '\t', '\r']`
+- Store processed text in new `csv` files
