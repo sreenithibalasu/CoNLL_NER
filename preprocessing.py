@@ -3,10 +3,24 @@ import json
 import pandas as pd
 import numpy as np
 
-    ## refer to usage notes: https://github.com/sreenithibalasu/CoNLL_NER/tree/main/data
-    ## for detailed explanations
 
 def preprocess_text(df, classes):
+    
+    """
+    Usage Notes
+    
+    preprocess_text takes two arguments
+    - df (pandas dataframe) : dataframe containing tokens and corresponding tagd
+    - classes (dictionary) : contains string classes as keys and corresponding numerical category. Ex: {'PER': 1...}
+    
+    What it does:
+    - converts string classes into numerical representations
+    - removes unwanted spaces
+    - removes escape sequence or whitespace characters
+    
+    Returns
+    - df (pandas dataframe) : after making changes to the text
+    """
 
     y_return = []
     whitespaces = ['\n', '\t', '\r']
@@ -39,6 +53,7 @@ if __name__ == "__main__":
     with open("configs.json", "r") as json_file:
         configs = json.load(json_file)
 
+    # load configs
     data_path = configs["data_path"]
 
     df_train = pd.read_csv(os.path.join(data_path, "train.csv"))
@@ -46,8 +61,6 @@ if __name__ == "__main__":
     df_valid = pd.read_csv(os.path.join(data_path, "valid.csv"))
 
     classes = configs["classes"]
-
-
 
     # preprocess text
     df_train_preprocessed = preprocess_text(df_train, classes)
