@@ -17,4 +17,3 @@ NOTE: the folder to `results_path` must be created beforehand by you.
 - **Then run** `preprocessing.py` - this refers to the CSV files and does necessary preprocessing to the text and tags
 - **Finally run** `training.py` - this takes care of converting text to vectors, model training and testing, and testing out with `custom_inputs`.
 
-## Code Files and Functions
