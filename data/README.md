@@ -1,4 +1,4 @@
-# Usage Notes and Additional Information
+# Usage Notes
 
 - Runs ONLY on Python 3
 - Create a virtual environment (recommended but optional)
