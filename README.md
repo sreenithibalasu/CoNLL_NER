@@ -65,6 +65,10 @@
 - Word2Vec has two approaches
   - Continuous Bag of Words (CBOW)
   - Continuous Skip-Gram
+
+<img width="553" alt="image" src="https://user-images.githubusercontent.com/40226554/164295496-ab240344-4952-43d1-9444-fba3f3fe16f8.png">
+
+
   - For this project, I've cosen the Skip-Gram model over the CBOW model as the skip-gram model had better quality of prediction. Although, the computational complexity is higher.
 
 - With the data I have- a `csv` file of tokens, my first task was to make a corpus of sentences. I grouped words as sentences - each sentence ending with a period `.`
