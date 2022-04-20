@@ -68,7 +68,7 @@
 
 <img width="553" alt="image" src="https://user-images.githubusercontent.com/40226554/164295496-ab240344-4952-43d1-9444-fba3f3fe16f8.png">
 
-
+  - In the **CBOW model**, the surrounding words are combined to predict the word in the middle. While in the **Skip-gram model**, the distributed representation of the input word is used to predict the context.
   - For this project, I've cosen the Skip-Gram model over the CBOW model as the skip-gram model had better quality of prediction. Although, the computational complexity is higher.
 
 - With the data I have- a `csv` file of tokens, my first task was to make a corpus of sentences. I grouped words as sentences - each sentence ending with a period `.`
