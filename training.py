@@ -14,6 +14,11 @@ import seaborn as sn
 import matplotlib.pyplot as plt
 sentences = []
 tags = []
+
+    ## refer to usage notes: https://github.com/sreenithibalasu/CoNLL_NER/tree/main/data
+    ## for detailed explanations
+    
+   
 def format_word2vec(df, type):
     global sentences
     global tags
