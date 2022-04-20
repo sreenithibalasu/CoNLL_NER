@@ -95,7 +95,7 @@
 
 
 ### Sample Outputs
-- Sentence: My name is Ashley and I work at Microsoft in America
+- Sentence: *My name is Ashley and I work at Microsoft in America*
 - Tags for the sentence above was generated using the Random Forest Model
 
 | TOKEN | TAG |
