@@ -15,15 +15,29 @@ import matplotlib.pyplot as plt
 sentences = []
 tags = []
 
-    ## refer to usage notes: https://github.com/sreenithibalasu/CoNLL_NER/tree/main/data
-    ## for detailed explanations
-    
-   
 def format_word2vec(df, type):
+    """
+    Usage Notes
+    
+    format_word2vec takes two arguments
+    - df (pandas dataframe): contains preprocessed text tokens (str) and corresponding tags (int)
+    - type (str): can be train, validation or test
+    
+    What it does:
+    - it takes each token in each of the three dataframes and puts each sentence together
+    - the tokens for every sentence is stored in a list
+    - the sentence ends if a '.' is reached
+    - this is done because Word2Vec takes a corpus as input and not individual tokens.
+    
+    """
     global sentences
     global tags
     print("Processing ", type, " data...")
 
+    # why is this here? in the validation dataset, the last sentence is missing a "."
+    # Here, tokens are grouped to list of tokens to represent a sentence
+    # each sentence is ended with a '.'
+    
     if type == 'valid':
         df = df.append({"text": ".", "tag": 0}, ignore_index=True)
 
@@ -59,6 +73,20 @@ def format_word2vec(df, type):
 
 def convert_word2vec(df, model):
 
+    """
+    Usage Notes
+    
+    convert_word2vec takes 2 arguments:
+    - df (pandas dataframe) : containing preprocessed tags and tokens
+    - model: the custom built Word2Vec model
+    
+    This function goes through each token in the dataframe and finds the vector representation for each
+    token using the custom word2vec model. It puts them in a list.
+    
+    Returns:
+    - X_vectors (list of vectors): a list of vector representation (numerical) for each token
+    
+    """
     X = df['text'].values
     X_vectors = []
     for x in X:
@@ -68,6 +96,24 @@ def convert_word2vec(df, model):
 
 
 def train_model(X_train_vectors, y_train, X_test_vectors, y_test, save_path, clf_type):
+    
+    """
+    Usage Notes
+    
+    train_model takes 6 arguments:
+    - X_train_vectors (list of vector representations): independent training vectors for each token
+    - y_train (list of ints): dependent variable for each token 
+    - X_test_vectors (list of vector representations): independent test vectors for each token
+    - y_test (list of ints): dependent variable for each token for testing
+    - save_path (string): path to store classification report
+    - clf_type (string): one of three: "RF", "NB" or "GB"
+    
+    This function trains a given model, performs testing and stores the corresponding classification report for each classifier
+    
+    Returns
+    - clf (scikit classifier): trained model 
+    
+    """
     # create the model, train it, print scores
 
     if clf_type == "RF":
@@ -149,11 +195,13 @@ if __name__ == '__main__':
     #     sentences_new.append([sentence[k] for k in range(len(sentence)) if k not in to_pop])
 
 
+    # TRAIN CUSTOM Word2Vec MODEL
     print(len(sentences))
     # print(len(sentences_new), tags_new.count(0))
     custom_model = Word2Vec(sentences, min_count=1,vector_size=300,workers=4, sg=1)
     # custom_model = Word2Vec(sentences_new, min_count=1,vector_size=300,workers=4, sg=1)
 
+    # MAKE VECTOR REPRESENTATIONS
     X_train_vec = convert_word2vec(df_train, custom_model)
     X_test_vec = convert_word2vec(df_test, custom_model)
     X_val_vec = convert_word2vec(df_valid, custom_model)
@@ -168,11 +216,13 @@ if __name__ == '__main__':
     # y_train = df_train[df_train['tag']!=0]['tag'].values
     # y_test = df_test[df_test['tag']!=0]['tag'].values
     # y_val = df_valid[df_valid['tag']!=0]['tag'].values
-    #
+    
+    # PERFORM MODEL TRAINING
     clf_rf = train_model(X_train_vec, y_train, X_test_vec, y_test, results_path, "RF")
-    # clf_nb = train_model(X_train_vec, y_train, X_test_vec, y_test, results_path, "NB")
-    # clf_gb = train_model(X_train_vec, y_train, X_test_vec, y_test, results_path, "GB")
+    clf_nb = train_model(X_train_vec, y_train, X_test_vec, y_test, results_path, "NB")
+    clf_gb = train_model(X_train_vec, y_train, X_test_vec, y_test, results_path, "GB")
 
+    # PERFORM TESTING ON A CUSTOM OUTPUT ON BEST MODEL: RANDOM FOREST
     custom_inputs = configs["custom_inputs"]
     custom_tokens = word_tokenize(custom_inputs[0])
     #vectorize input
