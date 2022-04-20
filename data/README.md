@@ -14,6 +14,9 @@
 NOTE: the folder to `results_path` must be created beforehand by you.
 
 - **First run** `txt_to_csv.py` - this converts the original text files to CSV and stores it in `data_path`
+  - `python3 txt_to_csv.py`
 - **Then run** `preprocessing.py` - this refers to the CSV files and does necessary preprocessing to the text and tags
+  - `python3 preprocessing.py`
 - **Finally run** `training.py` - this takes care of converting text to vectors, model training and testing, and testing out with `custom_inputs`.
+  - `python3 training.py`
 
