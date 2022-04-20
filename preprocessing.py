@@ -3,6 +3,9 @@ import json
 import pandas as pd
 import numpy as np
 
+    ## refer to usage notes: https://github.com/sreenithibalasu/CoNLL_NER/tree/main/data
+    ## for detailed explanations
+
 def preprocess_text(df, classes):
 
     y_return = []
