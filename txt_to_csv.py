@@ -4,6 +4,19 @@ import pandas as pd
 
 def txt_to_lst(f, type):
 
+    """
+    Usage Notes:
+    
+    The purpose of this function is to convert the contents of txt files and returns a list independent and dependent variables
+    txt_to_lst takes two arguments
+    - f (file object) : the txt file to be opened
+    - type (str) : whether the corresponding file is train, test or validation 
+    
+    Returns
+    - X: independent text tokens (list of str)
+    - y: dependent text tags for every token (list of str)
+    
+    """
     print("Converting ", type, "from txt to lists ...")
     f.seek(0)
     X = []
